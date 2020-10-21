@@ -34,6 +34,11 @@
         display:block;
     }
 
+    .link{
+        text-decoration: underline;
+        color: white;
+    }
+
     .prev-button, .next-button{
         position:absolute;
         top:0;
@@ -67,6 +72,8 @@
     }
     .prev-button{
         left:0;
+        top:15%;
+        bottom: 15%;
         &:before{
             left:0;
             opacity:0;
@@ -92,6 +99,8 @@
     }
     .next-button{
         right:0;
+        top:15%;
+        bottom:15%;
         &:before{
             right:0;
             opacity:0;

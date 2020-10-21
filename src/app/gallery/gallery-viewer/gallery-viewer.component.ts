@@ -5,7 +5,7 @@ import { Component, OnInit, Input, HostBinding } from '@angular/core';
   templateUrl: './gallery-viewer.component.html',
   styleUrls: ['./gallery-viewer.component.scss']
 })
-export class GalleryViewerComponent implements OnInit {
+export class GalleryViewerComponent {
 
   // this enables the component to update its class list itself based on a condition. Here the condition is a private boolean property.
   // This is the same as using NgClass on a child element
@@ -17,11 +17,11 @@ export class GalleryViewerComponent implements OnInit {
   constructor(
   ) { }
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
     // init viewer as closed
     this.isOpen = false;
     // fetch data from ciconia gallery service
-  }
+  }*/
 
   /**
    * handler called when user clicks on the next arrow in the viewer
@@ -79,6 +79,10 @@ export class GalleryViewerComponent implements OnInit {
     if(order < 0) order = this.itemsData.length - 1;
     if(order >= this.itemsData.length) order = 0
     this.current = order
+  }
+
+  openInNewTab() {
+    window.open(this.itemsData[this.current].url, '_blank');
   }
 
   /**

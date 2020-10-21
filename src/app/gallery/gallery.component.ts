@@ -47,6 +47,8 @@ export class GalleryComponent implements AfterViewInit, OnInit {
     // set this item as selected
     this.itemsData[order].selected = true;
 
+
+    
     if(!this.viewerElement.isOpen){
       this.viewerElement.open(this.selectedItem);
 
@@ -82,8 +84,8 @@ export class GalleryComponent implements AfterViewInit, OnInit {
         i++;
 
         this.itemsData.push(img);
-        this.viewerElement.itemsData = this.itemsData;
       });
+      this.viewerElement.itemsData = this.itemsData;
     });
   }
 }
